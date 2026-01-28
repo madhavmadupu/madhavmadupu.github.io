@@ -3,71 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madhav Madupu | Full-Stack Dev & AI Enthusiast</title>
+    <title>Madhav Madupu | AI & Agentic Systems Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #0a0a0a;
-            --card-bg: #161616;
-            --text-main: #ffffff;
-            --text-dim: #a0a0a0;
-            --accent: #3b82f6;
-            --border: #262626;
+            --bg: #050505;
+            --surface: #111111;
+            --border: #222222;
+            --accent: #00d1ff; /* Cyber Blue */
+            --text-primary: #ffffff;
+            --text-secondary: #999999;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            font-family: 'Inter', -apple-system, sans-serif; 
+            font-family: 'Inter', -apple-system, system-ui, sans-serif; 
             background-color: var(--bg); 
-            color: var(--text-main); 
+            color: var(--text-primary); 
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
 
         /* Navigation */
-        nav { padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
-        .nav-links a { color: var(--text-dim); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: 0.3s; }
+        nav { padding: 2rem 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
+        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; color: var(--accent); }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: 0.2s; }
         .nav-links a:hover { color: var(--accent); }
 
-        /* Hero Section */
-        header { padding: 6rem 0 4rem; }
-        .badge { background: #1e293b; color: var(--accent); padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1.5rem; display: inline-block; }
-        h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800; }
-        .hero-p { font-size: 1.25rem; color: var(--text-dim); max-width: 600px; margin-bottom: 2rem; }
+        /* Hero */
+        header { padding: 8rem 0 5rem; }
+        .badge { display: inline-block; padding: 5px 12px; border: 1px solid var(--accent); color: var(--accent); border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1.5rem; }
+        h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; line-height: 1; letter-spacing: -2px; margin-bottom: 2rem; }
+        .hero-desc { font-size: 1.25rem; color: var(--text-secondary); max-width: 700px; margin-bottom: 2.5rem; }
         
-        .social-icons a { color: var(--text-main); font-size: 1.5rem; margin-right: 1.5rem; transition: 0.3s; }
-        .social-icons a:hover { color: var(--accent); transform: translateY(-3px); }
+        /* Stats/Impact Section */
+        .impact-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 4rem; padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+        .stat h4 { color: var(--accent); font-size: 1.5rem; margin-bottom: 0.2rem; }
+        .stat p { color: var(--text-secondary); font-size: 0.85rem; text-transform: uppercase; }
 
         /* Sections */
-        section { padding: 5rem 0; border-top: 1px solid var(--border); }
-        h2 { font-size: 1.8rem; margin-bottom: 2.5rem; font-weight: 700; }
+        section { padding: 6rem 0; border-top: 1px solid var(--border); }
+        h2 { font-size: 2rem; margin-bottom: 3rem; letter-spacing: -1px; }
 
-        /* Projects */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .card { 
-            background: var(--card-bg); 
-            border: 1px solid var(--border); 
-            padding: 2rem; 
-            border-radius: 12px; 
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .card h3 { margin-bottom: 0.75rem; font-size: 1.2rem; }
-        .card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 1.5rem; }
-        .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .tag { font-size: 0.75rem; background: #262626; padding: 4px 10px; border-radius: 4px; color: var(--text-dim); }
+        /* Project Cards */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .project-card { background: var(--surface); border: 1px solid var(--border); padding: 2rem; border-radius: 16px; transition: 0.3s; }
+        .project-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .project-card h3 { margin-bottom: 1rem; color: var(--accent); }
+        .project-card p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .tag { font-size: 0.7rem; background: #1a1a1a; border: 1px solid #333; padding: 3px 8px; border-radius: 4px; color: #ccc; }
 
-        /* Skills */
-        .skills-container { display: flex; flex-wrap: wrap; gap: 1rem; }
-        .skill-item { border: 1px solid var(--border); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; background: #111; }
+        /* Contribution List */
+        .contribution-item { margin-bottom: 2rem; padding-left: 1.5rem; border-left: 2px solid var(--accent); }
+        .contribution-item h4 { margin-bottom: 0.5rem; }
+        .contribution-item p { color: var(--text-secondary); font-size: 0.95rem; }
 
-        footer { padding: 4rem 0; text-align: center; color: var(--text-dim); font-size: 0.9rem; }
+        /* Tech Stack */
+        .stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+        .stack-category h5 { color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .stack-list { list-style: none; color: var(--text-secondary); font-size: 0.9rem; }
+        .stack-list li { margin-bottom: 0.4rem; }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
+        footer { padding: 4rem 0; text-align: center; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 0.85rem; }
+
+        .social-links a { color: var(--text-primary); margin-right: 1.5rem; font-size: 1.2rem; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            header { padding: 4rem 0 3rem; }
             .nav-links { display: none; }
         }
     </style>
@@ -76,92 +82,126 @@
 
     <div class="container">
         <nav>
-            <div class="logo">MADHAV.</div>
+            <div class="logo">MADHAV MADUPU</div>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="#projects">Work</a>
+                <a href="#contributions">Open Source</a>
+                <a href="#stack">Stack</a>
+                <a href="mailto:madhav.madupu@gmail.com">Contact</a>
             </div>
         </nav>
 
         <header>
-            <span class="badge">Handcrafting each line of code</span>
-            <h1>Madhav Madupu</h1>
-            <p class="hero-p">Full-stack developer and designer based in India. Crafting AI experiences and building high-performance web applications.</p>
-            <div class="social-icons">
+            <span class="badge">Google Open Source Contributor</span>
+            <h1>Building Autonomous Agentic Systems.</h1>
+            <p class="hero-desc">Software Engineer specializing in <b>LLM Orchestration</b>, <b>Multi-Agent Systems</b>, and <b>Cloud-Native AI</b>. Turning experimental research into production-grade infrastructure.</p>
+            <div class="social-links">
                 <a href="https://github.com/madhavmadupu"><i class="fab fa-github"></i></a>
                 <a href="https://linkedin.com/in/madhavmadupu"><i class="fab fa-linkedin"></i></a>
-                <a href="https://dev.to/madhavmadupu"><i class="fab fa-dev"></i></a>
+                <a href="https://madhavmadupu.vercel.app"><i class="fas fa-globe"></i></a>
                 <a href="mailto:madhav.madupu@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
         </header>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="hero-p">
-                <p>I'm a 21-year-old developer passionate about **Machine Learning**, **NLP**, and **UI/UX Design**. Currently pursuing my graduation, I focus on bridging the gap between complex backend logic and intuitive user experiences.</p>
-                <br>
-                <p>Fun fact: I've been coding since the 6th grade and originally dreamt of becoming a Robotic Engineer!</p>
+        <div class="impact-bar">
+            <div class="stat">
+                <h4>105+</h4>
+                <p>Repositories</p>
             </div>
-        </section>
+            <div class="stat">
+                <h4>TensorFlow</h4>
+                <p>Official Contributor</p>
+            </div>
+            <div class="stat">
+                <h4>GCP</h4>
+                <p>Samples Developer</p>
+            </div>
+            <div class="stat">
+                <h4>Agentic AI</h4>
+                <p>Primary Research</p>
+            </div>
+        </div>
 
         <section id="projects">
-            <h2>Selected Work</h2>
-            <div class="grid">
-                <!-- Project 1 -->
-                <div class="card">
-                    <h3>Songs Recommendation System</h3>
-                    <p>An intelligent ML-based system that suggests music based on user preferences and audio features.</p>
+            <h2>Featured AI Systems</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>LOCO: Local RAG</h3>
+                    <p>Privacy-first RAG system with Semantic Chunking and LanceDB hybrid search. 100% data sovereignty for enterprises.</p>
                     <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Jupyter</span>
-                        <span class="tag">ML</span>
+                        <span class="tag">Next.js 15</span><span class="tag">FastAPI</span><span class="tag">Ollama</span><span class="tag">LanceDB</span>
                     </div>
                 </div>
-                <!-- Project 2 -->
-                <div class="card">
-                    <h3>Personality Prediction</h3>
-                    <p>Using NLP and machine learning to analyze text data and predict personality traits.</p>
+                <div class="project-card">
+                    <h3>LISA: Agentic Architect</h3>
+                    <p>Autonomous Multi-Agent System using LangGraph for secure SDLC. Self-correcting loops for code gen and testing.</p>
                     <div class="tags">
-                        <span class="tag">NLP</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Scikit-Learn</span>
+                        <span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">DeepSeek</span><span class="tag">Streamlit</span>
                     </div>
                 </div>
-                <!-- Project 3 -->
-                <div class="card">
-                    <h3>Production Analysis</h3>
-                    <p>A comprehensive PowerBI analysis on agriculture trends in Telangana to derive data-driven insights.</p>
+                <div class="project-card">
+                    <h3>AutoPharma AI</h3>
+                    <p>Agentic Drug Research Assistant using Gemini 2.0 Flash to synthesize medical literature in real-time.</p>
                     <div class="tags">
-                        <span class="tag">PowerBI</span>
-                        <span class="tag">Data Analysis</span>
+                        <span class="tag">Gemini 2.0</span><span class="tag">Reasoning Engine</span><span class="tag">DuckDuckGo API</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
+        <section id="contributions">
+            <h2>Open Source Impact</h2>
+            <div class="contribution-item">
+                <h4>tensorflow/tensorflow</h4>
+                <p>Engineered diagnostic error messages for XLA compilation. Resolved cryptic TypeErrors within tf.image pipelines, ensuring compile-time constant validation.</p>
+            </div>
+            <div class="contribution-item">
+                <h4>Google Cloud Platform</h4>
+                <p>Developed production samples for Vertex AI Agent Engine (Reasoning Engine). Optimized multimodal pipelines and dependency management for cloud services.</p>
+            </div>
+        </section>
+
+        <section id="stack">
             <h2>Technical Toolkit</h2>
-            <div class="skills-container">
-                <div class="skill-item">Python</div>
-                <div class="skill-item">Nest.js</div>
-                <div class="skill-item">React / Next.js</div>
-                <div class="skill-item">Machine Learning</div>
-                <div class="skill-item">NLP</div>
-                <div class="skill-item">UI/UX Design</div>
-                <div class="skill-item">PowerBI</div>
-                <div class="skill-item">Adobe Creative Suite</div>
+            <div class="stack-grid">
+                <div class="stack-category">
+                    <h5>Agentic AI</h5>
+                    <ul class="stack-list">
+                        <li>LangGraph / CrewAI</li>
+                        <li>Multi-Agent Orchestration</li>
+                        <li>Self-Correction Loops</li>
+                    </ul>
+                </div>
+                <div class="stack-category">
+                    <h5>LLMs & Data</h5>
+                    <ul class="stack-list">
+                        <li>Gemini 2.0 / GPT-4</li>
+                        <li>Llama 3 / DeepSeek</li>
+                        <li>ChromaDB / Pinecone</li>
+                    </ul>
+                </div>
+                <div class="stack-category">
+                    <h5>Cloud & Infra</h5>
+                    <ul class="stack-list">
+                        <li>GCP (Vertex AI)</li>
+                        <li>Docker / Ollama</li>
+                        <li>CI/CD Pipelines</li>
+                    </ul>
+                </div>
+                <div class="stack-category">
+                    <h5>Backend</h5>
+                    <ul class="stack-list">
+                        <li>FastAPI / NestJS</li>
+                        <li>Python / TypeScript</li>
+                        <li>Apache Spark</li>
+                    </ul>
+                </div>
             </div>
-        </section>
-
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <p class="hero-p">I thrive in the late hours and am always open to exciting new projects or collaborations.</p>
-            <a href="mailto:madhav.madupu@gmail.com" style="color: var(--accent); text-decoration: none; font-weight: bold; font-size: 1.2rem;">madhav.madupu@gmail.com</a>
         </section>
 
         <footer>
-            <p>&copy; 2025 Madhav Madupu. Built with precision.</p>
+            <p>Designed and Engineered by Madhav Madupu &copy; 2026</p>
+            <p style="margin-top: 0.5rem; opacity: 0.5;">Hyderabad, India 🇮🇳</p>
         </footer>
     </div>
 
